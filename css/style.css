@@ -262,11 +262,11 @@ margin: 3em 0;
     border-radius: 1em;
     margin-bottom: 1em;
 }
-#testimonialSection .testimonialOuterDiv .testimonialInnerDiv:hover{
+/* #testimonialSection .testimonialOuterDiv .testimonialInnerDiv:hover{
     background-color: teal;
     color:white;
     margin-top: -2em;
-   }
+   } */
 #testimonialSection .testimonialOuterDiv .testimonialInnerDiv:hover img{
     border: 6px solid white;
 }

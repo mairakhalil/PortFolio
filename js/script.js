@@ -27,6 +27,42 @@ typingEffect()
       isMenuVisible = !isMenuVisible;
   });
 
+//MULTIPLE BG COLORS OF CARDS ON HOVER
+const colorChangeElements = document.querySelectorAll(".testimonialInnerDiv");
+const colors = ["#0c5050", "teal"];
+let intervalIds = new Map();
+console.log("div",colorChangeElements)
+
+colorChangeElements.forEach((element) => {
+  element.addEventListener("mouseenter", function () {
+    // Start an interval to change the background color continuously
+    if (!intervalIds.has(element)) {
+      let currentIndex = 0;
+      const intervalId = setInterval(function () {
+        element.style.backgroundColor = colors[currentIndex];
+        element.style.color = "white";
+        currentIndex = (currentIndex + 1) % colors.length;
+        element.style.marginTop = "-2em";
+      }, 200);
+      intervalIds.set(element, intervalId);
+    }
+  });
+
+  element.addEventListener("mouseleave", function () {
+    // Reset the background color, color, and margin-top
+    if (intervalIds.has(element)) {
+      clearInterval(intervalIds.get(element));
+      intervalIds.delete(element);
+      element.style.backgroundColor = "transparent";
+      element.style.color = "black";
+      element.style.marginTop = "0";
+    }
+  });
+});
+
+
+
+
 
 
 

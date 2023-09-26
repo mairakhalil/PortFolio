@@ -35,7 +35,7 @@ console.log("div",colorChangeElements)
 
 colorChangeElements.forEach((element) => {
   element.addEventListener("mouseenter", function () {
-    // Start an interval to change the background color continuously
+    //Change the background color continuously
     if (!intervalIds.has(element)) {
       let currentIndex = 0;
       const intervalId = setInterval(function () {

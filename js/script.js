@@ -1,3 +1,13 @@
+// BORDER ON IMAGE 
+let heroImage=document.querySelector(".hero-img img");
+heroImage.style.border="16px solid white";
+heroImage.addEventListener('mouseenter',()=>{
+  heroImage.style.border="16px solid teal";
+});
+heroImage.addEventListener('mouseleave',()=>{
+  heroImage.style.border="16px solid white";
+});
+
 // TYPING EFFECT ON PROFESSION
 var i = 0;
 var text = 'Frontend Developer';

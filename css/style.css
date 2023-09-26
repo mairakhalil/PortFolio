@@ -262,11 +262,7 @@ margin: 3em 0;
     border-radius: 1em;
     margin-bottom: 1em;
 }
-/* #testimonialSection .testimonialOuterDiv .testimonialInnerDiv:hover{
-    background-color: teal;
-    color:white;
-    margin-top: -2em;
-   } */
+
 #testimonialSection .testimonialOuterDiv .testimonialInnerDiv:hover img{
     border: 6px solid white;
 }
@@ -281,11 +277,11 @@ margin: 3em 0;
 }
 /* TESTIMONIAL STYLE ENDS */
 
+/* CONTACT US STYLE */
 #contactSection{
     background: linear-gradient(to right, rgb(14, 73, 73), rgb(221, 243, 243));
     padding: 3em;
 }
-/* CONTACT US STYLE */
 #contactSection .contactOuterDiv{
     display: flex;
 }
@@ -315,17 +311,18 @@ margin: 3em 0;
 .mapouter{
     position:relative;
     text-align:right;
-    width: -webkit-fill-available;;
+    width: 500px;
     height:400px;
 }
 .gmap_canvas 
-{overflow:hidden;
+{
+    overflow:hidden;
     background:none!important;
-    width: -webkit-fill-available;;
+    width: 500px;
     height:400px;
 }
 .gmap_iframe{
-    width: -webkit-fill-available!important;
+    width: 500px;
     height:400px!important;
 }
 /* CONTACT US STYLE ENDS*/
@@ -374,33 +371,9 @@ footer a:hover{
     }
     .contactInnerDiv form{
         margin-right: 0em;
-    }
-    .mapouter{
-        width: -webkit-fill-available;
-    }
-    .gmap_canvas 
-    {
-        width: -webkit-fill-available;
-    }
-    .gmap_iframe{
-        width: -webkit-fill-available;
-    }    
+    } 
 }
 
-@media only screen and (max-width: 820px){
-    .smHidden{
-        display: block;
-    }
-    .smHidden ul{
-        display: none;
-    }
-    .lgShow ul{
-        display: none;
-    }
-    .show {
-        display: block;
-    }
-}
 @media only screen and (max-width: 774px){
     .home{
         background: linear-gradient(to top, rgb(14, 73, 73),rgb(25, 107, 107), rgb(221, 243, 243));
@@ -423,4 +396,32 @@ footer a:hover{
     .hero .hero-img img {
         width: 14em;
     }
+}
+
+@media only screen and (max-width: 820px){
+    .smHidden{
+        display: block;
+    }
+    .smHidden ul{
+        display: none;
+    }
+    .lgShow ul{
+        display: none;
+    }
+    .show {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1012px){
+    .mapouter{
+        width: -webkit-fill-available;
+    }
+    .gmap_canvas 
+    {
+        width: -webkit-fill-available;
+    }
+    .gmap_iframe{
+        width: -webkit-fill-available;
+    } 
 }

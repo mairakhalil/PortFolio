@@ -15,7 +15,6 @@ typingEffect()
 // NAV MENU ON TOGGLE BTN
   const toggleBtn = document.getElementById("toggleBtn");
   const navbar = document.querySelector(".smHidden ul");
-
   let isMenuVisible = false;
 
   toggleBtn.addEventListener("click", function () {

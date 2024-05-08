@@ -191,7 +191,7 @@ margin: 3em 0;
 	position: absolute;
 	content: attr(value);
 	top: -33px;
-	left: 100%;
+	left: 93%;
 	color: black;
 	font-size: 17px;
 }
@@ -243,6 +243,22 @@ margin: 3em 0;
     opacity: 1; /* Show the description on hover */
   }
 
+  .btn-container {
+    text-align: center;
+    margin-top: 20px; 
+}
+.prevBtn, .nextBtn, .testimonialprevBtn, .testimonialnextBtn{
+    color: teal;
+    font-size: 22px;
+}
+.prevBtn:hover, .nextBtn:hover, .testimonialprevBtn:hover, .testimonialnextBtn:hover{
+    color: rgb(24, 100, 100);
+    font-size: 23px;
+    cursor: pointer;
+    
+}
+
+
 /* PORTFOLIO STYLE ENDS*/
 
 /* TESTIMONIAL STYLE STARTS */
@@ -275,6 +291,18 @@ margin: 3em 0;
 .testimonialInnerDiv .fa-star{
     color: rgb(228, 167, 14)
 }
+.portfolioOuterDiv {
+    /* Your existing styles */
+    position: relative; /* Needed for absolute positioning of canvas */
+}
+
+#confettiCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allows clicks to go through the canvas to the card content */
+}
+
 /* TESTIMONIAL STYLE ENDS */
 
 /* CONTACT US STYLE */
@@ -425,3 +453,6 @@ footer a:hover{
         width: -webkit-fill-available;
     } 
 }
+
+
+

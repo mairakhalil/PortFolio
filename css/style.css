@@ -295,13 +295,10 @@ margin: 3em 0;
     /* Your existing styles */
     position: relative; /* Needed for absolute positioning of canvas */
 }
+/* Show only one card initially on screens less than 768px wide */
 
-#confettiCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none; /* Allows clicks to go through the canvas to the card content */
-}
+
+
 
 /* TESTIMONIAL STYLE ENDS */
 

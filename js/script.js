@@ -70,74 +70,89 @@ colorChangeElements.forEach((element) => {
 });
 
 
-let currentIndex = 0;
-const items = document.querySelectorAll('.PortfolioInnerDiv');
+// PORTFOLIO SLIDER
+let initialCardsToShow = 3; // Number of cards to show initially on large screens
 
-function showItems(index) {
-    items.forEach((item, i) => {
-        if (i >= index && i < index + 3) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-    });
+let portfoliocurrentIndex = 0;
+const portfolioitems = document.querySelectorAll('.PortfolioInnerDiv');
+
+ // Number of cards to show initially on large screens
+function sowportfolioitems() {
+  const maxCardsToShow = window.innerWidth <= 768 ? 1 : 3; // Adjust based on screen size
+
+  const startIndex = portfoliocurrentIndex % portfolioitems.length; // Wrap around for smooth transition
+
+  portfolioitems.forEach((item, i) => {
+    item.style.display = i >= startIndex && i < startIndex + maxCardsToShow ? 'block' : 'none';
+  });
 }
 
-// Show the first three items initially
-showItems(currentIndex);
+if (window.innerWidth <= 768) { // Adjust width as needed
+  initialCardsToShow = 1; // Show one card on small screens
+}
+sowportfolioitems();
 
-function nextItems() {
-    currentIndex += 3;
-    if (currentIndex >= items.length) {
-        currentIndex = 0;
+// Add event listener to handle screen resize
+window.addEventListener('resize', sowportfolioitems);
+
+function portfolionextItems() {
+  portfoliocurrentIndex += window.innerWidth <= 768 ? 1 : 3;
+    if (portfoliocurrentIndex >= portfolioitems.length) {
+      portfoliocurrentIndex = 0;
     }
-    showItems(currentIndex);
+    sowportfolioitems();
 }
-
-function prevItems() {
-    currentIndex -= 3;
-    if (currentIndex < 0) {
-        currentIndex = items.length - 3;
+function portfolioprevItems() {
+  portfoliocurrentIndex -= window.innerWidth <= 768 ? 1 : 3;
+    if (portfoliocurrentIndex < 0) {
+      portfoliocurrentIndex = portfolioitems.length - (window.innerWidth <= 768 ? 1 : 3);
     }
-    showItems(currentIndex);
+    sowportfolioitems();
 }
-
-// Handle button clicks
-document.querySelector('.prevBtn').addEventListener('click', prevItems);
-document.querySelector('.nextBtn').addEventListener('click', nextItems);
+document.querySelector('.prevBtn').addEventListener('click', portfolionextItems);
+document.querySelector('.nextBtn').addEventListener('click', portfolioprevItems);
 
 
 
+// TESTIMONIAL SLIDER
 let testimonialcurrentIndex = 0;
 const testimonialitems = document.querySelectorAll('.testimonialInnerDiv');
 
-function showItestimonialtems(index) {
-  testimonialitems.forEach((item, j) => {
-        if (j >= index && j < index + 3) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-    });
+ // Number of cards to show initially on large screens
+
+function sowtestimonialitems() {
+  const maxCardsToShow = window.innerWidth <= 768 ? 1 : 3; // Adjust based on screen size
+
+  const startIndex = testimonialcurrentIndex % testimonialitems.length; // Wrap around for smooth transition
+
+  testimonialitems.forEach((item, i) => {
+    item.style.display = i >= startIndex && i < startIndex + maxCardsToShow ? 'block' : 'none';
+  });
 }
 
-// Show the first three items initially
-showItestimonialtems(testimonialcurrentIndex);
+// Check screen size on initial load
+if (window.innerWidth <= 768) { // Adjust width as needed
+  initialCardsToShow = 1; // Show one card on small screens
+}
+sowtestimonialitems();
+
+// Add event listener to handle screen resize
+window.addEventListener('resize', sowtestimonialitems);
 
 function testimonialnextItems() {
-  testimonialcurrentIndex += 3;
+  testimonialcurrentIndex += window.innerWidth <= 768 ? 1 : 3;
     if (testimonialcurrentIndex >= testimonialitems.length) {
       testimonialcurrentIndex = 0;
     }
-    showItestimonialtems(testimonialcurrentIndex);
+    sowtestimonialitems();
 }
 
 function testimonialprevItems() {
-  testimonialcurrentIndex -= 3;
+  testimonialcurrentIndex -= window.innerWidth <= 768 ? 1 : 3;
     if (testimonialcurrentIndex < 0) {
-      testimonialcurrentIndex = testimonialitems.length - 3;
+      testimonialcurrentIndex = testimonialitems.length - (window.innerWidth <= 768 ? 1 : 3);
     }
-    showItestimonialtems(testimonialcurrentIndex);
+    sowtestimonialitems();
 }
 
 // Handle button clicks
@@ -164,3 +179,4 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   alert("Form submitted successfully!");
   // You can also use AJAX to send the form data to a server-side script for processing and sending the email
 });
+

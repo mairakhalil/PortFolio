@@ -126,7 +126,7 @@ margin: 3em 0;
 .aboutOuterDiv .social-media i{
     margin-top: 2em;
 }
-.aboutOuterDiv .social-media i, .aboutOuterDiv .icon i{
+.aboutOuterDiv .social-media i, .aboutOuterDiv .icon i , #contactSection .social-media i, #contactSection .social-media svg{
     padding-top: 14px;
     width: 45px;
     height: 29px;
@@ -138,10 +138,16 @@ margin: 3em 0;
 	background-color: teal;
     text-align: center;
 }
+
 .aboutOuterDiv .social-media i:hover, .aboutOuterDiv .icon i:hover{
     color: teal;
     background-color: transparent;
     border: 2px solid teal
+}
+#contactSection .social-media i:hover, #contactSection .social-media svg:hover{
+    color: rgb(4, 58, 58);
+    background-color: transparent;
+    border: 2px solid rgb(4, 58, 58);
 }
 .aboutRightDiv, .aboutLeftDiv{
     width: -webkit-fill-available;
@@ -255,10 +261,7 @@ margin: 3em 0;
     color: rgb(24, 100, 100);
     font-size: 23px;
     cursor: pointer;
-    
 }
-
-
 /* PORTFOLIO STYLE ENDS*/
 
 /* TESTIMONIAL STYLE STARTS */
@@ -295,60 +298,25 @@ margin: 3em 0;
     /* Your existing styles */
     position: relative; /* Needed for absolute positioning of canvas */
 }
-/* Show only one card initially on screens less than 768px wide */
-
-
-
-
 /* TESTIMONIAL STYLE ENDS */
 
 /* CONTACT US STYLE */
 #contactSection{
     background: linear-gradient(to right, rgb(14, 73, 73), rgb(221, 243, 243));
     padding: 3em;
+    text-align: center;
 }
-#contactSection .contactOuterDiv{
-    display: flex;
+#contactSection h2{
+font-size: 1.8rem;
 }
-.contactInnerDiv form{
-    margin-right: 2em;
-    padding-top: 3em;
-    margin-bottom: 2em;
+#contactSection .social-media{
+    display:inline-flex
 }
-::placeholder {
-    color: rgb(190, 190, 190);
-  }
-.contactInnerDiv form input, textarea{
-    border-radius: 20px;
-    padding: 0.5em;
-    width: -webkit-fill-available;
-    outline: none;
-    margin-bottom: 1em;
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-}
-.contactInnerDiv form button{
-    margin-top: 1em;
-    width: 50%;
-}
-/* MAP STYLE */
-.mapouter{
-    position:relative;
-    text-align:right;
-    width: 500px;
-    height:400px;
-}
-.gmap_canvas 
-{
-    overflow:hidden;
-    background:none!important;
-    width: 500px;
-    height:400px;
-}
-.gmap_iframe{
-    width: 500px;
-    height:400px!important;
+#contactSection .social-media svg{
+    padding-bottom: 8px;
+    padding-top: 10px;
+    width: 43px;
+    height: 23px;
 }
 /* CONTACT US STYLE ENDS*/
 
@@ -366,7 +334,7 @@ footer p{
 footer a{
     color: white;
 }
-footer a:hover{
+.footer a:hover{
     color: rgb(179, 179, 179);
 }
 /* FOOTER STYLE ENDS HERE */
@@ -391,12 +359,8 @@ footer a:hover{
       #testimonialSection .testimonialOuterDiv{
         grid-template-columns: 1fr;
     }
-    #contactSection .contactOuterDiv{
-       flex-direction: column;
-    }
-    .contactInnerDiv form{
-        margin-right: 0em;
-    } 
+ 
+   
 }
 
 @media only screen and (max-width: 774px){
